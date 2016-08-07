@@ -6,7 +6,7 @@ This is an example project combining many features of the Spring Cloud ecosystem
 * Zuul: API Gateway (:8080) - All requests should go through here
 * OAuth2 Provider: Supports password grant, the intended use here
 * Some OAuth2 Service: "resource"
-* Config Server: TODO
+* Config Server: Centralized configuration, looks at [sample-spring-cloud-config](https://github.com/mrasband/sample-spring-cloud-config)
 
 The only port you should need to know is the api gateway, as the rest of the apps automatically register their url with the api gateway. Instead, you can access the resources via their "name" through the API Gateway:  `localhost:8080/<app_name>/<app_path>`
 
