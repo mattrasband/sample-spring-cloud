@@ -43,7 +43,8 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     protected JwtAccessTokenConverter jwtTokenEnhancer() {
         JwtAccessTokenConverter converter =  new JwtAccessTokenConverter();
 //        converter.setSigningKey("foobar");
-        converter.setSigningKey(resourceServerProperties.getJwt().getKeyValue());
+//        converter.setSigningKey(resourceServerProperties.getJwt().getKeyValue());
+        converter.setVerifierKey(resourceServerProperties.getJwt().getKeyValue());
 //        Resource resource = new ClassPathResource("public.cert");
 //        String publicKey = null;
 //        try {
