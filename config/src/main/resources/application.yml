@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/mrasband/sample-spring-cloud-config
+      allow-override: true
+      fail-fast: true
+server:
+  port: 8888

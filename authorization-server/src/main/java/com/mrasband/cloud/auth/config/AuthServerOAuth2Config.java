@@ -37,7 +37,8 @@ public class AuthServerOAuth2Config extends AuthorizationServerConfigurerAdapter
                 .secret("secret")
                 .autoApprove(true)
                 .authorizedGrantTypes("password", "authorization_code", "refresh_token", "implicit")
-                .scopes("main_app");
+                .scopes("main_app")
+                .redirectUris("http://localhost:8085");
     }
 
     @Override

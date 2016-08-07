@@ -14,5 +14,6 @@
         <module>service-discovery</module>
         <module>authorization-server</module>
         <module>resource-server</module>
+        <module>config</module>
     </modules>
 </project>
