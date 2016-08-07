@@ -11,7 +11,6 @@ import java.util.UUID;
 @RequestMapping("/foo")
 public class Controller {
     @RequestMapping(method = RequestMethod.GET)
-    @PreAuthorize("hasAuthority('USER1')")
     public String readFoo() {
         return "read FOO " + UUID.randomUUID().toString();
     }
