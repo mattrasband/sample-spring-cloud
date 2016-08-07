@@ -11,10 +11,8 @@
 
     <modules>
         <module>api-gateway</module>
-        <module>book-service</module>
         <module>service-discovery</module>
         <module>authorization-server</module>
         <module>resource-server</module>
     </modules>
-
 </project>

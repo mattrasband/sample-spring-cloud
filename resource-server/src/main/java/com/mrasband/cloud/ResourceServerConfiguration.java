@@ -1,6 +1,8 @@
 package com.mrasband.cloud;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.autoconfigure.security.oauth2.resource.ResourceServerProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -14,6 +16,9 @@ import org.springframework.security.oauth2.provider.token.store.JwtTokenStore;
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter {
+    @Autowired
+    private ResourceServerProperties resourceServerProperties;
+
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http
@@ -37,7 +42,8 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     @Bean
     protected JwtAccessTokenConverter jwtTokenEnhancer() {
         JwtAccessTokenConverter converter =  new JwtAccessTokenConverter();
-        converter.setSigningKey("foobar");
+//        converter.setSigningKey("foobar");
+        converter.setSigningKey(resourceServerProperties.getJwt().getKeyValue());
 //        Resource resource = new ClassPathResource("public.cert");
 //        String publicKey = null;
 //        try {

@@ -15,3 +15,8 @@ eureka:
 spring:
   application:
     name: resource
+security:
+  oauth2:
+    resource:
+      jwt:
+        key-value: foobar
